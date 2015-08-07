@@ -1,6 +1,6 @@
 # Facebook Page
 
-Responsive web sites (or giving hubs) created with [Gulp.js](http://gulpjs.com/), [Metalsmith](http://www.metalsmith.io/) and [Prismic.io](https://prismic.io/). Build static sites with [Handlebars](http://handlebarsjs.com/), [SASS](http://sass-lang.com/) and [Webpack](http://webpack.github.io/).
+Website for use client's Facebook pages as a tab. More or less a replica of supporter pages.
 
 ## Dependencies
 
