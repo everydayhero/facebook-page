@@ -9,7 +9,7 @@ Website for use client's Facebook pages as a tab. More or less a replica of supp
 
 ## Configuring a new client
 
-1. Copy the template configuration file from `config/template.json` and rename it to your client name. Eg `config/some-client.json`
+1. Copy the template configuration file: `src/config/template.js` and rename the copied version to the name of the client. Eg `src/config/some-client.js`
 2. Edit your new configuration file as required.
 3. Run this command: `npm run start`
 4. Open `http://localhost:3000?client=some-client` in your browser. Make sure you pass in the name of your configuration file via GET.

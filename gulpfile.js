@@ -8,7 +8,7 @@ gulp.task('default', ['server', 'watch'], function() {
 });
 
 gulp.task('server', function () {
-  return browserSync.init(['dist/**/*'], {
+  return browserSync.init({
     server: { baseDir: './dist' },
     open: false,
     notify: false
