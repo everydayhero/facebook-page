@@ -1,7 +1,7 @@
 {
-  "name": "metalsmith-gub",
+  "name": "facebook-page",
   "version": "0.0.4",
-  "description": "Responsive web sites (or giving hubs) created with Gulp.js, Metalsmith and Prismic.io.",
+  "description": "Website for use client's Facebook pages as a tab.",
   "main": "gulpfile.js",
   "scripts": {
     "setup": "npm install && npm run build",
@@ -21,7 +21,6 @@
     "metalsmith-imagemin": "^1.1.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
-    "metalsmith-prismic": "^0.7.1",
     "metalsmith-sass": "^0.7.0",
     "metalsmith-templates": "^0.6.0",
     "metalsmith-webpack": "^1.0.1",
