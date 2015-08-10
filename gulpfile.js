@@ -34,7 +34,7 @@ gulp.task('publish', ['build'], function() {
     region: aws.region
   });
 
-  return gulp.src('./dist/**')
+  return gulp.src('./test/**')
     .pipe(publisher.publish(headers))
     .pipe(awspublish.reporter());
 });

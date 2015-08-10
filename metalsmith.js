@@ -5,8 +5,6 @@ var Handlebars = require('handlebars');
 var markdown   = require('metalsmith-markdown')
 var sass       = require('metalsmith-sass');
 var imagemin   = require('metalsmith-imagemin');
-var webpack    = require('metalsmith-webpack');
-var optimize   = require('webpack').optimize;
 var permalinks = require('metalsmith-permalinks');
 var path       = require('path');
 var fs         = require('fs');
@@ -30,27 +28,11 @@ fs.readdirSync('templates/partials').forEach(function(file) {
   Handlebars.registerPartial(name, contents);
 });
 
-var webpackConfig = {
-  context: path.resolve(__dirname, './src/js/'),
-  entry: './index.js',
-  output: {
-    path: path.resolve(__dirname, './dist/js/'),
-    filename: 'bundle.js'
-  },
-  plugins: [
-    new optimize.UglifyJsPlugin({
-      comments: /^remove all comments$/,
-      mangle: true
-    })
-  ]
-};
-
 module.exports = function metalSmith(done) {
   Metalsmith(__dirname)
     .clean(false)
     .use(changed())
     .use(markdown())
-    .use(webpack(webpackConfig))
     .use(templates('handlebars'))
     .use(sass({
       outputDir: 'css/'

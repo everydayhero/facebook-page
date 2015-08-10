@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.2.1",
+    "expose-loader": "^0.7.0",
     "gulp": "^3.8.11",
     "gulp-awspublish": "^2.0.2",
     "handlebars": "^3.0.0",
@@ -22,8 +23,6 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-sass": "^0.7.0",
-    "metalsmith-templates": "^0.6.0",
-    "metalsmith-webpack": "^1.0.1",
-    "webpack": "^1.10.5"
+    "metalsmith-templates": "^0.6.0"
   }
 }
