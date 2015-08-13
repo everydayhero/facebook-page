@@ -1,7 +1,263 @@
 @import "normalize";
 @import "variables";
 
+
+
+/* GENERAL
+------------------------------------------------------ */
 html, body {
   width: 100%;
   height: 100%;
+  max-width: 810px;
+
+  font-family: 'Lato', sans-serif;
+  color: #525252;
+  font-size: 10px;
+}
+
+h2 {
+  padding-top: 40px !important;
+}
+
+
+
+/* LOADING
+------------------------------------------------------ */
+.loading {
+  text-align: center;
+  padding-top: 40px;
+
+  .text {
+    font-size: 2rem;
+
+    font-weight: 700;
+    padding-top: 20px;
+  }
+  img {
+    margin-left: -30px;
+  }
+}
+
+
+
+/* HEADER
+------------------------------------------------------ */
+header {
+  border-bottom: 1px solid #00a044;
+  padding-bottom: 15px;
+  padding-top: 17px;
+  text-align: center;
+
+  a {
+    img {
+      width: 200px;
+    }
+  }
+}
+
+
+
+/* TOP SECTION
+------------------------------------------------------ */
+.topSection {
+  display: table;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .logo {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .description {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .readMore {
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+
+      color: inherit;
+      position: relative;
+      cursor: pointer;
+
+      &:after {
+        transition: all 160ms ease-out;
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        display: block;
+        left: 0;
+        right: 0;
+        background-color: #00a044;
+        height: 3px;
+        transform: scaleX(0);
+      }
+
+      &:hover:after {
+        height: 1px;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .btnContainer {
+    display: table-cell;
+    vertical-align: middle;
+
+    .btn {
+      display: inline-block;
+    }
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .topSection {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .logo {
+      display: block;
+      width: 100%;
+      padding-bottom: 15px;
+    }
+
+    .description {
+      display: block;
+      padding-bottom: 15px;
+    }
+
+    .btnContainer {
+      display: block;
+    }
+  }
+}
+
+
+
+/* METRICS
+------------------------------------------------------ */
+.metricsSection {
+  .GoalProgress {
+    .GoalProgress__bar {
+      .GoalProgress__barFill {
+        background-color: #555555;
+        transition: background-color .2s ease-in-out;
+
+        &:after {
+          border-left-color: #555555;
+          transition: border-left-color .2s ease-in-out;
+        }
+      }
+    }
+
+    &:hover .GoalProgress__bar .GoalProgress__barFill {
+      background-color: lighten(#555555, 5%);
+
+      &:after {
+        border-left-color: lighten(#555555, 5%);
+      }
+    }
+  }
+
+  .metrics {
+    width: 100%;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0;
+
+    .metric {
+      display: inline-block;
+      width: 33.3%;
+      box-sizing: border-box;
+      padding-left: 5px;
+      padding-right: 5px;
+
+      &>div {
+        transition: background-color .2s ease-in-out;
+
+        &:hover {
+          background-color: lighten(#555555, 5%);
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+      &:last-child {
+        padding-left: 10px;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .metricsSection {
+    .metrics {
+      .metric {
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 10px !important;
+      }
+    }
+  }
+}
+
+
+
+/* EVENTS
+------------------------------------------------------ */
+.eventsSection {
+  .title {
+    color: inherit;
+    font-size: 24px;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 21px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: .12rem;
+    padding-top: 40px;
+  }
+
+  .UpcomingEvents__title {
+    display: none;
+  }
+}
+
+
+
+/* FOOTER
+------------------------------------------------------ */
+footer {
+  margin-top: 30px;
+  width: 100%;
+  background: #7ec774;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: .08rem;
+  font-size: 1.6rem;
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  span {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    white-space: nowrap;
+  }
 }

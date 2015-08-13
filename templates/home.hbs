@@ -1,32 +1,66 @@
 {{> header }}
 
+<div class='loading'>
+  <img src='img/loading.gif' alt='Loading' />
+  <div class='text'>Loading</div>
+</div> <!-- .loading -->
 
-<div class='contentWrapper'>
+
+
+<div class='contentWrapper' style='display: none;'>
 
   <header>
     <a href='http://everydayhero.com/au/' target='_top'><img src='img/edhLogo.png' alt='Everyday Hero' /></a>
   </header>
 
   <section class='topSection'>
+    <div class='logo'>
+      <img src='#' alt='' id='logo' />
+    </div> <!-- .logo -->
+
+    <div class='description'>
+      <span id='description'></span>
+      <a href="javascript: readMore();" class='readMore'>Continue reading</a>
+    </div>
+
+    <div class='btnContainer'>
+      <div class='btn' id='getStarted'></div>
+      <div class='btn' id='donate'></div>
+    </div> <!-- .btnContainer -->
   </section> <!-- .topSection -->
 
   <section class='metricsSection'>
+    <div id='goalBar'></div>
+
+    <div class='metrics'>
+      <div class='metric' id='raised'></div>
+      <div class='metric' id='supporters'></div>
+      <div class='metric' id='donations'></div>
+    </div> <!-- .metrics -->
   </section> <!-- .metricsSection -->
 
   <section class='eventsSection'>
-    <div id='events'></div>
+    <div class='eventsContainer' id='featuredEventsContainer'>
+      <div class='title'>Featured Events</div>
+      <div id='featuredEventsFix' style='display: none;'></div>
+      <div id='featuredEvents'></div>
+    </div> <!-- .eventsContainer -->
+
+    <div class='eventsContainer' id='upcomingEventsContainer'>
+      <div class='title'>Upcoming Events</div>
+      <div id='upcomingEvents'></div>
+    </div> <!-- .eventsContainer -->
   </section> <!-- .eventsSection -->
 
   <section class='supportersSection'>
-    <div id='supporters'></div>
+    <div id='topSupporters'></div>
   </section> <!-- .supportersSection -->
 
   <footer>
-    <div class='name' id='clientName'></div>
-    <div class='abn' id='clientABN'></div>
+    <span class='name' id='clientName'></span>
+    <span class='tax' id='clientTax'></span>
   </footer>
 
 </div> <!-- .contentWrapper -->
-
 
 {{> footer }}
