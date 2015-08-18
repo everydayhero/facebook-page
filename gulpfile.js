@@ -27,7 +27,7 @@ gulp.task('build', function(callback) {
 
 gulp.task('base', function() {
   var aws        = JSON.parse(fs.readFileSync('./aws.json'));
-  var websiteUrl = 'http://s3.amazonaws.com/' + aws.bucket + '/';
+  var websiteUrl = 'https://d2h3g7rbnequ8a.cloudfront.net/' + aws.bucket + '/';
 
   return gulp.src('./dist/**/*.html')
     .pipe(replace('http://localhost:3000/', websiteUrl))

@@ -135,7 +135,7 @@ function disableDOMElements() {
     $('#donations').remove();
   }
 
-  if (!enable_featuredEvents) {
+  if (!enable_featuredEvents || featuredEvents.length === 0) {
     $('#featuredEventsContainer').remove();
   }
   if (!enable_upcomingEvents) {
@@ -248,19 +248,17 @@ function initateWidgets() {
 
 
   // Events
-  if (enable_featuredEvents) {
-    edh.widgets.renderWidget('featuredEventsFix', 'UpcomingEvents', { charityUid: '' }); // This is a bug fix. For some reason without calling this first, the featuredEvents below comes out at full width? :(
+  edh.widgets.renderWidget('featuredEventsFix', 'UpcomingEvents', { charityUid: '' }); // This is a bug fix. For some reason without calling this first, the featuredEvents below comes out at full width? :(
 
+  if (enable_featuredEvents && featuredEvents.length > 0) {
     edh.widgets.renderWidget('featuredEvents', 'UpcomingEvents', {
       charityUid: charityID,
-      events: featuredEvents,
-      excludeEvents: excludedEvents
+      events: featuredEvents
     });
   }
   if (enable_upcomingEvents) {
     edh.widgets.renderWidget('upcomingEvents', 'UpcomingEvents', {
       charityUid: charityID,
-      events: featuredEvents,
       excludeEvents: excludedEvents
     });
   }
