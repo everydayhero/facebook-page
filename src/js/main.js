@@ -173,10 +173,21 @@ function readMore() {
 function initateWidgets() {
   // Goal bar
   if (enable_goalBar) {
-    edh.widgets.renderWidget('goalBar', 'EntityGoalProgress', {
-      charityUid: charityID,
-      goal: (goal * 100)
-    });
+    if (campaignIDs.length > 0) {
+      edh.widgets.renderWidget('goalBar', 'EntityGoalProgress', {
+        campaignUid: campaignIDs,
+        goal: (goal * 100),
+        startAt: startDate,
+        endAt: endDate
+      });
+    } else {
+      edh.widgets.renderWidget('goalBar', 'EntityGoalProgress', {
+        charityUid: charityID,
+        goal: (goal * 100),
+        startAt: startDate,
+        endAt: endDate
+      });
+    }
   }
 
 
@@ -185,11 +196,16 @@ function initateWidgets() {
     if (campaignIDs.length > 0) {
       edh.widgets.renderWidget('raised', 'FundsRaised', {
         campaignUids: campaignIDs,
-        format: '0,0'
+        format: '0,0',
+        startAt: startDate,
+        endAt: endDate
       });
     } else {
       edh.widgets.renderWidget('raised', 'FundsRaised', {
-        charityUid: charityID
+        charityUid: charityID,
+        format: '0,0',
+        startAt: startDate,
+        endAt: endDate
       });
     }
   }
@@ -197,11 +213,17 @@ function initateWidgets() {
   if (enable_supporters) {
     if (campaignIDs.length > 0) {
       edh.widgets.renderWidget('supporters', 'TotalSupporters', {
-        campaignUids: campaignIDs
+        campaignUids: campaignIDs,
+        format: '0,0',
+        startAt: startDate,
+        endAt: endDate
       });
     } else {
       edh.widgets.renderWidget('supporters', 'TotalSupporters', {
-        charityUid: charityID
+        charityUid: charityID,
+        format: '0,0',
+        startAt: startDate,
+        endAt: endDate
       });
     }
   }
@@ -209,11 +231,17 @@ function initateWidgets() {
   if (enable_donations) {
     if (campaignIDs.length > 0) {
       edh.widgets.renderWidget('donations', 'TotalDonations', {
-        campaignUids: campaignIDs
+        campaignUids: campaignIDs,
+        format: '0,0',
+        startAt: startDate,
+        endAt: endDate
       });
     } else {
       edh.widgets.renderWidget('donations', 'TotalDonations', {
-        charityUid: charityID
+        charityUid: charityID,
+        format: '0,0',
+        startAt: startDate,
+        endAt: endDate
       });
     }
   }
@@ -221,15 +249,19 @@ function initateWidgets() {
 
   // Events
   if (enable_featuredEvents) {
-    edh.widgets.renderWidget('featuredEventsFix', 'UpcomingEvents', { }); // This is a bug fix. For some reason without calling this first, the next time comes out at full width? :(
+    edh.widgets.renderWidget('featuredEventsFix', 'UpcomingEvents', { charityUid: '' }); // This is a bug fix. For some reason without calling this first, the featuredEvents below comes out at full width? :(
 
     edh.widgets.renderWidget('featuredEvents', 'UpcomingEvents', {
-      charityUid: charityID
+      charityUid: charityID,
+      events: featuredEvents,
+      excludeEvents: excludedEvents
     });
   }
   if (enable_upcomingEvents) {
     edh.widgets.renderWidget('upcomingEvents', 'UpcomingEvents', {
-      charityUid: charityID
+      charityUid: charityID,
+      events: featuredEvents,
+      excludeEvents: excludedEvents
     });
   }
 
@@ -238,8 +270,7 @@ function initateWidgets() {
   if (enable_topSupporters) {
     if (campaignIDs.length > 0) {
       edh.widgets.renderWidget('topSupporters', 'Supporters', {
-        //campaignUids: campaignIDs
-        charityUid: charityID
+        campaignUids: campaignIDs
       });
     } else {
       edh.widgets.renderWidget('topSupporters', 'Supporters', {

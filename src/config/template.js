@@ -6,6 +6,11 @@ var campaignIDs = [
 var goal = 5000000;
 
 
+// Start and end dates for goal progress bar, raised, donations & supporters widgets. Format: YYYY-MM-DD (leave start or end date blank for no start or end date)
+var startDate = "";
+var endDate = "";
+
+
 // Defaut values populated via the API. Leave blank unless you want to override.
 var clientName = "";
 var logoURL = "";
@@ -39,13 +44,7 @@ var enable_footer = true;
 
 // Feature / exclude events
 var featuredEvents = [
-  '1234',
-  '5678',
-  '910'
 ];
 
 var excludedEvents = [
-  '1234',
-  '5678',
-  '910'
 ];
