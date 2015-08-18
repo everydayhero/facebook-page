@@ -16,14 +16,30 @@ if (typeof $_GET['client'] !== 'undefined') {
 }
 
 // Load config file
-$.getScript('config/'+configFile, function(data, textStatus, jqxhr) {
-  getConfigFromAPI();
+$(document).ready(function() {
+  $.getScript('config/'+configFile, function(data, textStatus, jqxhr) {
+    // Are we doing the Facebook canvas redirect?
+    if (typeof $_GET['canvas'] !== 'undefined' && $_GET['canvas'] == 'true') {
+      top.location = canvasURL;
+    } else {
+      getConfigFromAPI();
+    }
+  });
+
+  iframeResize();
 });
+
+
+// Size the parent iFrame
+function iframeResize() {
+  var height = $('body').outerHeight();
+  parent.postMessage("resize::"+height,"*");
+}
 
 
 // Function to get config from the API and put it into blank config vars
 function getConfigFromAPI() {
-  var url = "http://everydayhero.com/api/v2/charities/"+charityID+".jsonp?";
+  var url = "https://everydayhero.com/api/v2/charities/"+charityID+".jsonp?";
   var request = $.getJSON(url+'&callback=?', function(data) {
     var apiData = data.charity;
 

@@ -1,3 +1,6 @@
+// This is required for mobiles to work. It can be found under https://developers.facebook.com -> Your App -> Settings -> Add Platform -> Facebook Canvas -> Canvas Page
+var canvasURL = "https://apps.facebook.com/fanstwofundraisers";
+
 var charityID = "au-27";
 var campaignIDs = [
   'us-22',
