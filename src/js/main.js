@@ -18,15 +18,10 @@ if (typeof $_GET['client'] !== 'undefined') {
 // Load config file
 $(document).ready(function() {
   $.getScript('config/'+configFile, function(data, textStatus, jqxhr) {
-    // Are we doing the Facebook canvas redirect?
-    if (typeof $_GET['canvas'] !== 'undefined' && $_GET['canvas'] == 'true') {
-      top.location = canvasURL;
-    } else {
-      getConfigFromAPI();
-    }
+    getConfigFromAPI();
   });
 
-  iframeResize();
+  setInterval(iframeResize, 1000);
 });
 
 

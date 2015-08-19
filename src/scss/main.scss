@@ -159,6 +159,16 @@ header {
       }
     }
 
+    .GoalProgress__text p {
+      display: inline-block;
+      background: rgba(0,0,0,.4);
+      height: auto;
+      line-height: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 3px;
+    }
+
     &:hover .GoalProgress__bar .GoalProgress__barFill {
       background-color: lighten(#555555, 5%);
 
