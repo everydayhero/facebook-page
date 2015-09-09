@@ -7,7 +7,11 @@ Website for use client's Facebook pages as a tab. More or less a replica of supp
 - [Node.js](https://nodejs.org/) (v0.10+)
 - [Gulp.js](http://gulpjs.com/)
 
-## Configuring a new client
+## Configuring a new client (for regular humans)
+
+[https://docs.google.com/document/d/1BB2QanYcAaq6xDHndgwI3HOxniKut63YtxM9TjCNnLg/edit?usp=drivesdk](https://docs.google.com/document/d/1BB2QanYcAaq6xDHndgwI3HOxniKut63YtxM9TjCNnLg/edit?usp=drivesdk)
+
+## Configuring a new client (for local development)
 
 1. Copy the template configuration file: `src/config/template.js` and rename the copied version to the name of the client. Eg `src/config/some-client.js`
 2. Edit your new configuration file as required.
